@@ -1,18 +1,34 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Welcome from '../components/Welcome/Welcome';
+import Projects from '../components/Projects/Projects';
+import Navbar from '../components/NavBar/Navbar';
+import connection from '../firebase/connection';
+import projects from '../firebase/projects';
 
 class App extends Component {
+  state =
+  {
+    projects: [],
+  }
+
+  componentDidMount ()
+  {
+    connection();
+    projects.getProjects()
+      .then((projects) =>
+      {
+        this.setState({projects});
+      })
+      .catch((err) => { console.error(err); });
+  }
+
   render () {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Navbar />
+        <Welcome />
+        <Projects projects = {this.state.projects}/>
       </div>
     );
   }
