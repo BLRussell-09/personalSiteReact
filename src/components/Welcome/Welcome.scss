@@ -1,7 +1,5 @@
 .Welcome{
-  background-color: grey;
   background-image: url('https://images.unsplash.com/photo-1530240446898-6ba86b32be46?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f8608f9b409282cd5c63bd82be609427&auto=format&fit=crop&w=1950&q=80');
-  background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
 }
@@ -10,11 +8,39 @@
   padding: 0;
 }
 
+.jumbotron{
+  padding: 1em !important;
+}
+
 .welcomeHeader{
-  color: white;
+  color: black;
 }
 
 .faceImage{
   height: 300px;
   width: 300px;
+}
+
+/* Welcome Screen Card Icons*/
+.githubIcon {
+  height: 50px;
+  width: 100%;
+}
+
+.emailIcon {
+  height: 50px;
+  width: 100%;
+}
+
+.soundcloudIcon {
+  height: 50px;
+  width: 100%;
+}
+.soundcloudIcon {
+  height: 50px;
+  width: 100%;
+}
+
+.card-action {
+  display: flex;
 }
